@@ -1,0 +1,13 @@
+.active {
+    background-color: white !important;
+    color: rgb(4, 144, 34) !important;
+    border: 1px solid rgb(0, 255, 76) !important;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+
+.active:hover {
+    background-color: rgb(8, 144, 13) !important;
+    color: white !important;
+}
