@@ -6,24 +6,13 @@ const {
 
 } = require('mongodb');
 require('dotenv').config();
-const cors = require('cors');
-
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-const corsOptions = {
-  origin: ['http://localhost:3000',
-   'https://assignment-ten-51ca0.web.app'],
-  credentials: true,
-  optionSuccessStatus: 200,
-}
-app.use(cors(corsOptions))
 app.use(express.json());
 
-// ${process.env.DB_PASS}:${process.env.DB_PASS}
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jceqwtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.caycpiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version and set interval for no crush site.
 const client = new MongoClient(uri, {
@@ -39,8 +28,8 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
 
 // Create User DataBase
-    const database = client.db("usersDB");
-    const usersCollection = database.collection("assignment-ten");
+    const database = client.db("AssignmentTen");
+    const usersCollection = database.collection("users");
 
     app.get('/users', async (req, res) => {
 
